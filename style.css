@@ -5,12 +5,22 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #333;
+    --accent-color: #ff6600;
+    --bg-color: #d0d6e3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* Основные стили */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.8; /* Увеличенное межстрочное расстояние */
-    background: #d0d6e3; /* Мягкий фон */
-    color: #333; /* Основной цвет текста */
+    background: var(--bg-color); /* Мягкий фон */
+    color: var(--primary-color); /* Основной цвет текста */
     overflow-x: hidden; /* Убираем горизонтальную прокрутку */
     padding: 0;
     margin: 0;
@@ -26,10 +36,12 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: #333;
+    background: var(--primary-color);
     color: #fff;
     z-index: 1000;
     padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .container .desktop-nav ul li{
@@ -64,15 +76,16 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #ff6600;
+    color: var(--accent-color);
+    transform: translateY(-2px);
 }
 
 header nav ul li a.active {
-    color: #ff6600;
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
@@ -85,13 +98,14 @@ main {
     display: none;
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 70%;
     height: 100%;
-    background: #333;
+    background: var(--primary-color);
     color: #fff;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: left 0.3s ease;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
     z-index: 1001;
   }
   
@@ -109,10 +123,11 @@ main {
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
+    transition: color 0.3s ease;
   }
-  
+
   .mobile-menu ul li a:hover {
-    color: #ff6600;
+    color: var(--accent-color);
   }
   
   /* Кнопка для открытия меню */
@@ -123,10 +138,15 @@ main {
     font-size: 1.5rem;
     color: #fff;
     cursor: pointer;
+    transition: transform 0.3s ease;
   }
-  
+
   .menu-toggle:focus {
     outline: none;
+  }
+
+  .menu-toggle:hover {
+    transform: scale(1.1);
   }
 
   .mobile-menu.open + .overlay {
@@ -155,7 +175,7 @@ main {
     }
   
     .mobile-menu.open {
-      left: 0;
+      transform: translateX(0);
     }
   }
 
@@ -168,6 +188,16 @@ section {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Стили секции "Über uns" */
