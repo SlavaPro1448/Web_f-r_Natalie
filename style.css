@@ -1,0 +1,662 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8; /* Увеличенное межстрочное расстояние */
+    background: #d0d6e3; /* Мягкий фон */
+    color: #333; /* Основной цвет текста */
+    overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+    padding: 0;
+    margin: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+    font-family: 'Arial', sans-serif !important;
+}
+
+/* Стили для header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.container .desktop-nav ul li{
+    color: #e2f204;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    /* max-width: 1200px;
+    margin: 0 auto; */
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ff6600;
+}
+
+header nav ul li a.active {
+    color: #ff6600;
+    text-decoration: underline;
+}
+
+main {
+    padding-top: 80px; /* Отступ для компенсации фиксированного header */
+}
+
+/* Скрытие мобильного меню по умолчанию */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background: #333;
+    color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
+    z-index: 1001;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  .mobile-menu ul li {
+    margin-bottom: 15px;
+  }
+  
+  .mobile-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .mobile-menu ul li a:hover {
+    color: #ff6600;
+  }
+  
+  /* Кнопка для открытия меню */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .menu-toggle:focus {
+    outline: none;
+  }
+
+  .mobile-menu.open + .overlay {
+    display: block;
+  }
+  
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    z-index: 10;
+  }
+  
+  /* Показ меню на мобильных устройствах */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .mobile-menu {
+      display: block;
+    }
+  
+    .mobile-menu.open {
+      left: 0;
+    }
+  }
+
+/* Секция */
+section {
+    min-height: 30vh; /* Гарантия минимальной высоты секции */
+    padding: 40px 20px; /* Отступы внутри секции */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Стили секции "Über uns" */
+section#about {
+    background: #d0d6e3;
+}
+
+/* Стили логотипа */
+
+.logo-container {
+    background-color: #d0d6e3; /* Цвет фона под логотип (замените на нужный цвет) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 681px; /* Регулируйте высоту блока по необходимости */
+    width: 100%;
+    /* margin-bottom: 50px; */
+    
+}
+
+.logo-container img {
+    max-height: 350px; /* Установите максимальную высоту логотипа */
+    width: auto;
+    /* margin-top: 23%; */
+}
+
+section#about .content {
+    max-width: 100%;
+    margin: 20px auto;
+    text-align: left; /* Левое выравнивание для читабельности */
+}
+
+section#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+section#about ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section#about ul li {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+section#about ul li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: #555;
+    font-size: 1.5rem;
+}
+
+/* Dienstleistungen */
+
+section#services h2{
+    margin-bottom: 20px;
+}
+
+section#services ul {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+section#services ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+}
+
+section#services ul li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: #333;
+}
+
+section#services {
+    font-size: 20px;
+}
+
+/* contact */
+
+section#contact {
+    background: #d0d6e3;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+section#contact {
+    font-size: 1.5rem;
+}
+
+/* Контактная форма */
+section#contact-forms {
+    background: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+form {
+    max-width: 700px;
+    margin: 10px auto;
+    background: #d0d6e3;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+section#contact-forms h2 {
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: #ff6600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-group-row {
+        flex-direction: column;
+    }
+}
+
+
+/* Стиль для секции формуляров */
+.downloads-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.downloads-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.downloads-list li {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.downloads-list li:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.downloads-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.downloads-list img {
+    max-width: 100%; /* Подгоняет под контейнер */
+    height: auto;
+}
+
+.file-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.file-description {
+    font-size: 14px;
+    color: #555;
+}
+
+
+section#impressum {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section#impressum .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section#impressum h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section#impressum p,
+section#impressum ul li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+section#impressum ul {
+    list-style: none;
+    padding: 0;
+}
+
+section#impressum ul li {
+    padding-left: 20px;
+    position: relative;
+}
+
+section#impressum ul li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: #faf8f8;
+}
+
+/* Секция "Datenschutz" */
+section#datenschutz .content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Левое выравнивание */
+}
+
+section#datenschutz h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section#datenschutz h3 {
+    font-size: 1.8rem;
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+section#datenschutz p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+section#datenschutz ul li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #ff6600;
+    text-decoration: underline;
+    margin: 0 5px;
+}
+
+/* Основной цвет ссылок в меню */
+header nav ul li a {
+    color: #fff; /* Белый цвет текста */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Цвет при наведении */
+header nav ul li a:hover {
+    color: #ff6600; /* Оранжевый цвет при наведении */
+}
+
+/* Выделение активной ссылки */
+header nav ul li a.active {
+    color: #ff6600; /* Активный (оранжевый) цвет для текущей страницы */
+    text-decoration: underline;
+}
+
+/* Плавный переход между секциями */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Стили для десктопа */
+
+
+/* Стили для планшетов (ширина экрана до 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .downloads-section {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .downloads-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .downloads-list img {
+        width: 50px; /* Уменьшаем иконки для мобильных */
+        height: auto;
+    }
+
+    .file-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
+
+
+/* Стили для мобильных устройств (ширина экрана до 480px) */
+@media (max-width: 480px) {
+
+    main {
+        padding-top: 120px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+   
+    .logo-container img {
+            max-height: 250px;  /* Уменьшаем высоту */
+            max-width: 90%;    /* Ширина логотипа адаптируется к экрану */
+            margin-top: 10%;   /* Уменьшаем отступ сверху */
+        }
+    
+    .logo-container {
+            height: 280px;    /* Уменьшаем высоту контейнера */
+        }
+    
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    p, li {
+        font-size: 0.9rem;
+    }
+
+    .downloads-section {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .downloads-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .downloads-list img {
+        width: 10px; /* Уменьшаем иконки для мобильных */
+        height: 10px;
+    }
+
+    .file-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+}

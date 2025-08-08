@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+          <h1>Hausverwaltung Natalie Frank</h1>
+          <!-- <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button> -->
+          <nav>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <!-- <li><a href="impressum.html" class="active">Impressum</a></li> -->
+            </ul>
+        </nav>
+        </div>
+        <!-- <nav class="mobile-menu">
+          <ul>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#services">Dienstleistungen</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#forms">Forms</a></li>
+          </ul>
+        </nav>
+        <div class="overlay"></div> -->
+      </header>
+
+      <section id="contact-forms">
+        <h2>Kontaktieren Sie uns</h2>
+        <p>Wenn Sie Fragen haben, füllen Sie bitte dieses Kontaktformular aus. Vielen Dank!</p>
+        <form id="contactForm" action="send_email.php" method="post" enctype="multipart/form-data">
+            
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="first-name">Vorname</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Nachname</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+    
+            <div class="form-group">
+                <label for="file">Dokument hochladen</label>
+                <input type="file" id="file" name="attachment[]" accept=".pdf,.doc,.docx,.jpg,.png" multiple required>
+                <small>Zulässige Formate: PDF, DOC, DOCX, JPG, PNG (Max 5MB)</small>
+            </div>
+    
+            <button type="submit">Absenden</button>
+    
+            <p id="successMessage" style="display: none; color: green; margin-top: 20px;">
+                Ihre Nachricht wurde erfolgreich gesendet!
+            </p>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
